@@ -120,7 +120,7 @@ const totalSlides = Math.ceil(celebrities.length / 4);
         width: 100%;
         overflow: hidden;
         position: relative;
-        padding: 0 15px;
+        padding: 16px 15px 0;
     }
 
     .wof-celebrities-track {
@@ -277,7 +277,6 @@ const totalSlides = Math.ceil(celebrities.length / 4);
         }
     }
 </style>
-
 <script>
     const trackElement = document.querySelector('.wof-celebrities-track') as HTMLElement;
     const prevButton = document.querySelector('.wof-prev-arrow') as HTMLButtonElement;
@@ -340,6 +339,25 @@ const totalSlides = Math.ceil(celebrities.length / 4);
         currentIndex = 0;
         scrollTo(0);
         updateNavigation();
+    });
+    //abd
+    document.addEventListener("DOMContentLoaded", function() {
+        const prevArrow = document.querySelector(".wof-prev-arrow");
+        const nextArrow = document.querySelector(".wof-next-arrow");
+
+        function triggerClick(element) {
+            if (element) {
+                element.click();
+            }
+        }
+
+        prevArrow.addEventListener("mouseenter", function() {
+            triggerClick(prevArrow);
+        });
+
+        nextArrow.addEventListener("mouseenter", function() {
+            triggerClick(nextArrow);
+        });
     });
 
     // Initial setup
